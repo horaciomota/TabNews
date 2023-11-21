@@ -6,14 +6,20 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct ContentView: View {
+    @State var ListofNews: [newsDataModel] = []
+    @StateObject var viewModel = PostListViewModel()
+
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Titulo da postagem")
+
+
         }
         .padding()
     }
