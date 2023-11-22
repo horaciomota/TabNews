@@ -27,32 +27,42 @@ struct PostList: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVStack(alignment: .leading, spacing: 32) {
+                LazyVStack(alignment: .leading, spacing: 0) {
                     ForEach(ListofNews, id: \.id) { new in
                         NavigationLink(destination: postContent(user: new.owner_username, slug: new.slug)) {
                             HStack (alignment: .center) {
-                                VStack {
+                                // Numero de comentarios
+                                VStack () {
                                     Rectangle()
                                         .frame(width: 1)
-                                        .foregroundColor(.primary)
+                                        .foregroundColor(.secondary)
+
+                                    Image(systemName: "chevron.up")
+                                        .padding(.vertical, 2)
 
                                     Text("\(new.children_deep_count)")
                                         .foregroundColor(.blue)
                                         .font(.subheadline)
 
+                                    Image(systemName: "chevron.down")
+                                        .padding(.vertical, 2)
+
                                     Rectangle()
                                         .frame(width: 1)
-                                        .foregroundColor(.primary)
+                                        .foregroundColor(.secondary)
                                 }
                                 .padding(.trailing)
 
 
                                 // Titulo do post
                                 VStack (alignment: .leading) {
+                                    Spacer()
                                     Text(new.title)
                                         .multilineTextAlignment(.leading)
-                                        .font(.title)
+                                        .font(.headline)
                                         .foregroundColor(.primary)
+                                        .padding(.top, 16)
+
 
                                     // Algumas estatisticas do post
                                     HStack {
@@ -61,9 +71,9 @@ struct PostList: View {
                                             .font(.footnote)
 
                                         HStack {
-                                            Circle()
-                                                .foregroundStyle(Color.yellow)
-                                                .frame(width: 5, height: 5)
+                                            Rectangle()
+                                                .foregroundStyle(Color.blue)
+                                                .frame(width: 8, height: 8)
 
 
                                             Text("\(new.tabcoins) tabcoins")
@@ -78,7 +88,8 @@ struct PostList: View {
                                             .font(.footnote)
 
                                     }
-                                    Divider()
+                                    .padding(.bottom, 16)
+
                                 }
                             }
                         }
