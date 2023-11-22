@@ -13,7 +13,6 @@ struct PostList: View {
 
 
     var body: some View {
-   
         NavigationStack {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 32) {

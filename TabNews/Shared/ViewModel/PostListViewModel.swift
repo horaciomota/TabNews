@@ -38,6 +38,21 @@ class PostListViewModel: ObservableObject {
         return postContent
     }
 
+    // Fazer chamada da thumbnail do post
+    func loadPostThumbnail(user: String, slug: String) async throws -> Data {
+        let urlString = "https://www.tabnews.com.br/api/v1/contents/\(user)/\(slug)/thumbnail"
+        guard let url = URL(string: urlString) else {
+            throw URLError(.badURL)
+        }
+
+        let (data, response) = try await URLSession.shared.data(from: url)
+
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw URLError(.badServerResponse)
+        }
+
+        return data
+    }
 }
 
 

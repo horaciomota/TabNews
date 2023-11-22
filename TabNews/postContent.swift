@@ -11,35 +11,56 @@ import Foundation
 struct postContent: View {
     var user: String
     var slug: String
+    @State private var thumbnailData: Data?
     @State private var postContent: PostContent?
     @StateObject var viewModel = PostListViewModel()
 
     var body: some View {
         NavigationStack {
-                    VStack {
-                        if let content = postContent {
-                            Text(content.title) // Exibindo o título
-                                .font(.headline)
-                            Text(content.body) // Exibindo o corpo do post
-                                .font(.body)
-                        }
+            ScrollView {
+                VStack {
+                    if let thumbnailData = thumbnailData, let uiImage = UIImage(data: thumbnailData) {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
                     }
-                    .onAppear {
-                        loadPostContent()
+
+                    if let content = postContent {
+                        Text(content.body)
+                            .font(.body)
                     }
+                    Spacer()
+                }
+                .onAppear {
+                    loadPostContent()
+                    loadPostThumbnail()
                 }
             }
-
-            func loadPostContent() {
-                Task {
-                    do {
-                        postContent = try await viewModel.loadPostContent(user: user, slug: slug)
-                    } catch {
-                        print("Erro ao carregar o conteúdo: \(error)")
-                    }
-                }
+            .padding(.horizontal)
+        }
+    }
+    // Task para carregar o conteudo escrito
+    func loadPostContent() {
+        Task {
+            do {
+                postContent = try await viewModel.loadPostContent(user: user, slug: slug)
+            } catch {
+                print("Erro ao carregar o conteúdo: \(error)")
             }
         }
+    }
+
+    // Task para carregar thumbnail
+    func loadPostThumbnail() {
+        Task {
+            do {
+                thumbnailData = try await viewModel.loadPostThumbnail(user: user, slug: slug)
+            } catch {
+                print("Erro ao carregar a thumbnail: \(error)")
+            }
+        }
+    }
+}
 
 // Para fins de visualização
 struct ContentView_Previews: PreviewProvider {
