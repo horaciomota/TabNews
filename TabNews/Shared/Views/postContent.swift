@@ -24,12 +24,14 @@ struct postContent: View {
                         Image(uiImage: uiImage)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
+                    } else {
+                        ProgressView()
                     }
 
                     if let content = postContent, !content.body.isEmpty {
                         Markdown(content.body)
                     } else {
-                        Text("Carregando conteúdo...")
+                        ProgressView()
                     }
                     Spacer()
                 }
@@ -38,6 +40,7 @@ struct postContent: View {
                     loadPostThumbnail()
                 }
             }
+            .scrollIndicators(.hidden)
             .padding(.horizontal)
         }
     }

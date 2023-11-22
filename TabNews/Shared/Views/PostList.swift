@@ -60,7 +60,6 @@ struct PostList: View {
                                                 .font(.footnote)
                                         }
 
-
                                         Spacer()
 
                                         Text(formatISODate(new.created_at))
@@ -75,6 +74,7 @@ struct PostList: View {
                     }
                 }
             }
+            .scrollIndicators(.hidden)
             .padding(.horizontal)
             .navigationTitle("News")
             .task {
