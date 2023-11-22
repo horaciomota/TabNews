@@ -9,8 +9,8 @@ import Foundation
 
 class PostListViewModel: ObservableObject {
 
+    // Listar todos os posts na pagina inicial
     func fetchNewPosts() async throws -> [newsDataModel] {
-
         let baseURL = "https://www.tabnews.com.br/api/v1/contents?page=1&per_page=30"
 
         guard let url = URL(string: baseURL) else {
@@ -26,4 +26,18 @@ class PostListViewModel: ObservableObject {
 
     }
 
+    // Listar todo o conteudo especifico do post
+    func loadPostContent(user: String, slug: String) async throws -> PostContent {
+        let urlString = "https://www.tabnews.com.br/api/v1/contents/\(user)/\(slug)"
+        guard let url = URL(string: urlString) else {
+            throw URLError(.badURL)
+        }
+
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let postContent = try JSONDecoder().decode(PostContent.self, from: data)
+        return postContent
+    }
+
 }
+
+

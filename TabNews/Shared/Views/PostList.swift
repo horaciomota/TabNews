@@ -18,7 +18,7 @@ struct PostList: View {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 32) {
                     ForEach(ListofNews, id: \.id) { new in
-                        NavigationLink(destination: ContentView()) {
+                        NavigationLink(destination: postContent(user: new.owner_username, slug: new.slug)) {
                             HStack (alignment: .center) {
                                 Circle()
                                     .foregroundStyle(Color.blue)
