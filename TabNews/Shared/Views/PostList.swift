@@ -11,6 +11,18 @@ struct PostList: View {
     @State var ListofNews: [newsDataModel] = []
     @StateObject var viewModel = PostListViewModel()
 
+    func formatISODate(_ isoDate: String) -> String {
+        let isoFormatter = ISO8601DateFormatter()
+        isoFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        guard let date = isoFormatter.date(from: isoDate) else {
+            return "Data inválida"
+        }
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        return dateFormatter.string(from: date)
+    }
 
     var body: some View {
         NavigationStack {
@@ -36,9 +48,25 @@ struct PostList: View {
                                         Text("\(new.owner_username)")
                                             .foregroundColor(.secondary)
                                             .font(.footnote)
-                                        Text("\(new.tabcoins) tabcoins")
+
+                                        HStack {
+                                            Circle()
+                                                .foregroundStyle(Color.yellow)
+                                                .frame(width: 5, height: 5)
+
+
+                                            Text("\(new.tabcoins) tabcoins")
+                                                .foregroundColor(.secondary)
+                                                .font(.footnote)
+                                        }
+
+
+                                        Spacer()
+
+                                        Text(formatISODate(new.created_at))
                                             .foregroundColor(.secondary)
                                             .font(.footnote)
+
                                     }
                                     Divider()
                                 }

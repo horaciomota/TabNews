@@ -67,6 +67,6 @@ struct postContent: View {
 // Para fins de visualização
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        postContent(user: "userTeste", slug: "slugTeste")
+        postContent(user: "maxsonalmeida", slug: "o-dev-junior-nao-pode-subestimar-o-poder-do-linkedin")
     }
 }
