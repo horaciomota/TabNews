@@ -31,16 +31,27 @@ struct PostList: View {
                     ForEach(ListofNews, id: \.id) { new in
                         NavigationLink(destination: postContent(user: new.owner_username, slug: new.slug)) {
                             HStack (alignment: .center) {
-                                Circle()
-                                    .foregroundStyle(Color.blue)
-                                    .frame(width: 10, height: 10)
-                                    .padding(.trailing, 10)
+                                VStack {
+                                    Rectangle()
+                                        .frame(width: 1)
+                                        .foregroundColor(.primary)
+
+                                    Text("\(new.children_deep_count)")
+                                        .foregroundColor(.blue)
+                                        .font(.subheadline)
+
+                                    Rectangle()
+                                        .frame(width: 1)
+                                        .foregroundColor(.primary)
+                                }
+                                .padding(.trailing)
+
 
                                 // Titulo do post
                                 VStack (alignment: .leading) {
                                     Text(new.title)
                                         .multilineTextAlignment(.leading)
-                                        .font(.headline)
+                                        .font(.title)
                                         .foregroundColor(.primary)
 
                                     // Algumas estatisticas do post
@@ -76,7 +87,7 @@ struct PostList: View {
             }
             .scrollIndicators(.hidden)
             .padding(.horizontal)
-            .navigationTitle("News")
+            .navigationTitle("TabNews")
             .task {
                 do {
                     ListofNews = try await viewModel.fetchNewPosts()

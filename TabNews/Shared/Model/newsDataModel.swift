@@ -15,6 +15,7 @@ struct newsDataModel: Codable, Identifiable {
     var tabcoins: Int
     var owner_username: String
     var slug: String
+    var children_deep_count: Int
 }
 
 
