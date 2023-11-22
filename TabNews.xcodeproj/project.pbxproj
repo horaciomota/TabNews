@@ -17,6 +17,8 @@
 		3DFF06212B0D68A300396A81 /* newsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF06202B0D68A300396A81 /* newsDataModel.swift */; };
 		3DFF06252B0D68D900396A81 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF06242B0D68D900396A81 /* PostListViewModel.swift */; };
 		3DFF06272B0D692500396A81 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF06262B0D692500396A81 /* PostList.swift */; };
+		3DFF062C2B0E95D600396A81 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 3DFF062B2B0E95D600396A81 /* SwiftSoup */; };
+		3DFF062F2B0E9AF600396A81 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3DFF062E2B0E9AF600396A81 /* MarkdownUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DFF062C2B0E95D600396A81 /* SwiftSoup in Frameworks */,
+				3DFF062F2B0E9AF600396A81 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +107,6 @@
 			children = (
 				3DFF061C2B0D687100396A81 /* Shared */,
 				3DFF05F12B0D667C00396A81 /* TabNewsApp.swift */,
-				3DFF05F32B0D667C00396A81 /* postContent.swift */,
 				3DFF05F52B0D667E00396A81 /* Assets.xcassets */,
 				3DFF05F72B0D667E00396A81 /* TabNews.entitlements */,
 				3DFF05F82B0D667E00396A81 /* Preview Content */,
@@ -158,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				3DFF06262B0D692500396A81 /* PostList.swift */,
+				3DFF05F32B0D667C00396A81 /* postContent.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +190,10 @@
 			dependencies = (
 			);
 			name = TabNews;
+			packageProductDependencies = (
+				3DFF062B2B0E95D600396A81 /* SwiftSoup */,
+				3DFF062E2B0E9AF600396A81 /* MarkdownUI */,
+			);
 			productName = TabNews;
 			productReference = 3DFF05EE2B0D667C00396A81 /* TabNews.app */;
 			productType = "com.apple.product-type.application";
@@ -258,6 +266,10 @@
 				Base,
 			);
 			mainGroup = 3DFF05E52B0D667C00396A81;
+			packageReferences = (
+				3DFF062A2B0E95D600396A81 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				3DFF062D2B0E9AF600396A81 /* XCRemoteSwiftPackageReference "MarkdownUI" */,
+			);
 			productRefGroup = 3DFF05EF2B0D667C00396A81 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -661,6 +673,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3DFF062A2B0E95D600396A81 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.1;
+			};
+		};
+		3DFF062D2B0E9AF600396A81 /* XCRemoteSwiftPackageReference "MarkdownUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3DFF062B2B0E95D600396A81 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DFF062A2B0E95D600396A81 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		3DFF062E2B0E9AF600396A81 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DFF062D2B0E9AF600396A81 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
+			productName = MarkdownUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3DFF05E62B0D667C00396A81 /* Project object */;
 }

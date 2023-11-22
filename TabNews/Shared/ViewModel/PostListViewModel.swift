@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftSoup
 
 class PostListViewModel: ObservableObject {
 
@@ -30,11 +31,14 @@ class PostListViewModel: ObservableObject {
     func loadPostContent(user: String, slug: String) async throws -> PostContent {
         let urlString = "https://www.tabnews.com.br/api/v1/contents/\(user)/\(slug)"
         guard let url = URL(string: urlString) else {
+            print("Ops...Check your URL, something went wrong")
             throw URLError(.badURL)
         }
 
         let (data, _) = try await URLSession.shared.data(from: url)
+        print("Wait, fetching post data... [1/2]")
         let postContent = try JSONDecoder().decode(PostContent.self, from: data)
+        print("Content fetch... [2/2]")
         return postContent
     }
 
@@ -42,17 +46,21 @@ class PostListViewModel: ObservableObject {
     func loadPostThumbnail(user: String, slug: String) async throws -> Data {
         let urlString = "https://www.tabnews.com.br/api/v1/contents/\(user)/\(slug)/thumbnail"
         guard let url = URL(string: urlString) else {
+            print("Ops...Check your URL, something went wrong")
             throw URLError(.badURL)
         }
 
         let (data, response) = try await URLSession.shared.data(from: url)
+        print("Wait, fetching post thumbnail...[1/2]")
 
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            print("Thumbnail fetch... [2/2]")
             throw URLError(.badServerResponse)
         }
 
         return data
     }
+
 }
 
 

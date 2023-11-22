@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Foundation
+import MarkdownUI
 
 struct postContent: View {
     var user: String
@@ -25,9 +26,10 @@ struct postContent: View {
                             .aspectRatio(contentMode: .fit)
                     }
 
-                    if let content = postContent {
-                        Text(content.body)
-                            .font(.body)
+                    if let content = postContent, !content.body.isEmpty {
+                        Markdown(content.body)
+                    } else {
+                        Text("Carregando conteúdo...")
                     }
                     Spacer()
                 }
