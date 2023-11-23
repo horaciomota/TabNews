@@ -7,9 +7,14 @@
 
 import Foundation
 
-struct ComentsModel: Codable {
+struct Coment: Codable, Identifiable {
     let id: String
     let body: String
     let published_at: String
     let owner_username: String
+    let created_at: String
+}
+
+struct ComentsModel: Codable {
+    var coments: [Coment]
 }

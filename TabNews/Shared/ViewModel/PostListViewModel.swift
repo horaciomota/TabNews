@@ -10,6 +10,20 @@ import SwiftSoup
 
 class PostListViewModel: ObservableObject {
 
+    // Funcao para formatar data e hora
+    func formatISODate(_ isoDate: String) -> String {
+        let isoFormatter = ISO8601DateFormatter()
+        isoFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        guard let date = isoFormatter.date(from: isoDate) else {
+            return "Data inválida"
+        }
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        return dateFormatter.string(from: date)
+    }
+
     // Listar todos os posts na pagina inicial
     func fetchNewPosts() async throws -> [newsDataModel] {
         let baseURL = "https://www.tabnews.com.br/api/v1/contents?page=1&per_page=30"
