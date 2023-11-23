@@ -20,6 +20,9 @@
 		3DFF062C2B0E95D600396A81 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 3DFF062B2B0E95D600396A81 /* SwiftSoup */; };
 		3DFF062F2B0E9AF600396A81 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3DFF062E2B0E9AF600396A81 /* MarkdownUI */; };
 		3DFF06312B0EA88D00396A81 /* PostContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF06302B0EA88D00396A81 /* PostContentModel.swift */; };
+		3DFF06342B100BBE00396A81 /* FloatingButton in Frameworks */ = {isa = PBXBuildFile; productRef = 3DFF06332B100BBE00396A81 /* FloatingButton */; };
+		3DFF06362B100C3000396A81 /* FloatingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF06352B100C3000396A81 /* FloatingButtonView.swift */; };
+		3DFF06382B100E6A00396A81 /* ComentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF06372B100E6A00396A81 /* ComentsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,8 @@
 		3DFF06242B0D68D900396A81 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		3DFF06262B0D692500396A81 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		3DFF06302B0EA88D00396A81 /* PostContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentModel.swift; sourceTree = "<group>"; };
+		3DFF06352B100C3000396A81 /* FloatingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtonView.swift; sourceTree = "<group>"; };
+		3DFF06372B100E6A00396A81 /* ComentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComentsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DFF06342B100BBE00396A81 /* FloatingButton in Frameworks */,
 				3DFF062C2B0E95D600396A81 /* SwiftSoup in Frameworks */,
 				3DFF062F2B0E9AF600396A81 /* MarkdownUI in Frameworks */,
 			);
@@ -164,6 +170,7 @@
 			children = (
 				3DFF06262B0D692500396A81 /* PostList.swift */,
 				3DFF05F32B0D667C00396A81 /* postContent.swift */,
+				3DFF06352B100C3000396A81 /* FloatingButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +180,7 @@
 			children = (
 				3DFF06202B0D68A300396A81 /* newsDataModel.swift */,
 				3DFF06302B0EA88D00396A81 /* PostContentModel.swift */,
+				3DFF06372B100E6A00396A81 /* ComentsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +204,7 @@
 			packageProductDependencies = (
 				3DFF062B2B0E95D600396A81 /* SwiftSoup */,
 				3DFF062E2B0E9AF600396A81 /* MarkdownUI */,
+				3DFF06332B100BBE00396A81 /* FloatingButton */,
 			);
 			productName = TabNews;
 			productReference = 3DFF05EE2B0D667C00396A81 /* TabNews.app */;
@@ -272,6 +281,7 @@
 			packageReferences = (
 				3DFF062A2B0E95D600396A81 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				3DFF062D2B0E9AF600396A81 /* XCRemoteSwiftPackageReference "MarkdownUI" */,
+				3DFF06322B100BBE00396A81 /* XCRemoteSwiftPackageReference "FloatingButton" */,
 			);
 			productRefGroup = 3DFF05EF2B0D667C00396A81 /* Products */;
 			projectDirPath = "";
@@ -318,9 +328,11 @@
 				3DFF05F42B0D667C00396A81 /* postContent.swift in Sources */,
 				3DFF06272B0D692500396A81 /* PostList.swift in Sources */,
 				3DFF06212B0D68A300396A81 /* newsDataModel.swift in Sources */,
+				3DFF06362B100C3000396A81 /* FloatingButtonView.swift in Sources */,
 				3DFF06252B0D68D900396A81 /* PostListViewModel.swift in Sources */,
 				3DFF05F22B0D667C00396A81 /* TabNewsApp.swift in Sources */,
 				3DFF06312B0EA88D00396A81 /* PostContentModel.swift in Sources */,
+				3DFF06382B100E6A00396A81 /* ComentsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +707,14 @@
 				minimumVersion = 2.2.0;
 			};
 		};
+		3DFF06322B100BBE00396A81 /* XCRemoteSwiftPackageReference "FloatingButton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/FloatingButton";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -707,6 +727,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3DFF062D2B0E9AF600396A81 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
 			productName = MarkdownUI;
+		};
+		3DFF06332B100BBE00396A81 /* FloatingButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DFF06322B100BBE00396A81 /* XCRemoteSwiftPackageReference "FloatingButton" */;
+			productName = FloatingButton;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

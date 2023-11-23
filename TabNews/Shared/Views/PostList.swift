@@ -107,7 +107,6 @@ struct PostList: View {
                 }
             }
         }
-
     }
 }
 
