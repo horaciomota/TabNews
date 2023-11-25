@@ -17,7 +17,6 @@ struct postContent: View {
     @StateObject var viewModel = PostListViewModel()
 
     var body: some View {
-        NavigationStack {
             ScrollView {
                 VStack {
                     if let thumbnailData = thumbnailData, let uiImage = UIImage(data: thumbnailData) {
@@ -42,7 +41,6 @@ struct postContent: View {
             }
             .scrollIndicators(.hidden)
             .padding(.horizontal)
-        }
     }
     // Task para carregar o conteudo escrito
     func loadPostContent() {
