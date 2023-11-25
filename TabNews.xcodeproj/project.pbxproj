@@ -25,6 +25,7 @@
 		3DFF06382B100E6A00396A81 /* ComentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF06372B100E6A00396A81 /* ComentsModel.swift */; };
 		3DFF063A2B100F3400396A81 /* ComentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF06392B100F3400396A81 /* ComentsView.swift */; };
 		3DFF063D2B100F4D00396A81 /* ComentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF063C2B100F4D00396A81 /* ComentsViewModel.swift */; };
+		3DFF06402B12908100396A81 /* TabBarModule in Frameworks */ = {isa = PBXBuildFile; productRef = 3DFF063F2B12908100396A81 /* TabBarModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 			files = (
 				3DFF06342B100BBE00396A81 /* FloatingButton in Frameworks */,
 				3DFF062C2B0E95D600396A81 /* SwiftSoup in Frameworks */,
+				3DFF06402B12908100396A81 /* TabBarModule in Frameworks */,
 				3DFF062F2B0E9AF600396A81 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +213,7 @@
 				3DFF062B2B0E95D600396A81 /* SwiftSoup */,
 				3DFF062E2B0E9AF600396A81 /* MarkdownUI */,
 				3DFF06332B100BBE00396A81 /* FloatingButton */,
+				3DFF063F2B12908100396A81 /* TabBarModule */,
 			);
 			productName = TabNews;
 			productReference = 3DFF05EE2B0D667C00396A81 /* TabNews.app */;
@@ -288,6 +291,7 @@
 				3DFF062A2B0E95D600396A81 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				3DFF062D2B0E9AF600396A81 /* XCRemoteSwiftPackageReference "MarkdownUI" */,
 				3DFF06322B100BBE00396A81 /* XCRemoteSwiftPackageReference "FloatingButton" */,
+				3DFF063E2B12908100396A81 /* XCRemoteSwiftPackageReference "swiftui-tab-bar" */,
 			);
 			productRefGroup = 3DFF05EF2B0D667C00396A81 /* Products */;
 			projectDirPath = "";
@@ -723,6 +727,14 @@
 				minimumVersion = 1.2.2;
 			};
 		};
+		3DFF063E2B12908100396A81 /* XCRemoteSwiftPackageReference "swiftui-tab-bar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/zijievv/swiftui-tab-bar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -740,6 +752,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3DFF06322B100BBE00396A81 /* XCRemoteSwiftPackageReference "FloatingButton" */;
 			productName = FloatingButton;
+		};
+		3DFF063F2B12908100396A81 /* TabBarModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DFF063E2B12908100396A81 /* XCRemoteSwiftPackageReference "swiftui-tab-bar" */;
+			productName = TabBarModule;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -35,6 +35,15 @@
         "revision" : "8b6cf29eead8841a1fa7822481cb3af4ddaadba6",
         "version" : "2.6.1"
       }
+    },
+    {
+      "identity" : "swiftui-tab-bar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/zijievv/swiftui-tab-bar.git",
+      "state" : {
+        "revision" : "ea2d605173e0fb2d101509f413a96953ac40e979",
+        "version" : "1.0.0"
+      }
     }
   ],
   "version" : 2

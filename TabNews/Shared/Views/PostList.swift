@@ -14,6 +14,7 @@ struct PostList: View {
     var body: some View {
         NavigationStack {
             ScrollView {
+                // Logo
                 HStack {
                     Spacer()
                     Image("TabNewsLogo")
@@ -37,13 +38,15 @@ struct PostList: View {
 
                                     Image(systemName: "chevron.up")
                                         .padding(.vertical, 2)
+                                        .foregroundColor(.secondary)
 
                                     Text("\(new.children_deep_count)")
-                                        .foregroundColor(.blue)
+                                        .foregroundColor(.secondary)
                                         .font(.subheadline)
 
                                     Image(systemName: "chevron.down")
                                         .padding(.vertical, 2)
+                                        .foregroundStyle(Color.secondary)
 
                                     Rectangle()
                                         .frame(width: 1)
@@ -69,9 +72,9 @@ struct PostList: View {
                                             .font(.footnote)
 
                                         HStack {
-                                            Rectangle()
-                                                .foregroundStyle(Color.blue)
-                                                .frame(width: 8, height: 8)
+                                            Circle()
+                                                .foregroundStyle(Color.black)
+                                                .frame(width: 5, height: 5)
 
 
                                             Text("\(new.tabcoins) tabcoins")
