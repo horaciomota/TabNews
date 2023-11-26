@@ -13,19 +13,19 @@ struct PostList: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                // Logo
-                HStack {
-                    Spacer()
-                    Image("TabNewsLogo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 35, height: 35)
-                    Text("TabNews")
-                        .font(.system(size: 22, weight: .bold))
-                    Spacer()
+            // Logo
+            HStack {
+                Spacer()
+                Image("TabNewsLogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 35, height: 35)
+                Text("TabNews")
+                    .font(.system(size: 22, weight: .bold))
+                Spacer()
 
-                }
+            }
+            ScrollView {
                 LazyVStack(alignment: .leading, spacing: 0) {
                     ForEach(ListofNews, id: \.id) { new in
                         NavigationLink(destination: postContent(user: new.owner_username, slug: new.slug)) {
