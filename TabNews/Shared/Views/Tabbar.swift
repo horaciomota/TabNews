@@ -25,7 +25,7 @@ struct Tabbar: View {
                         .font(.system(.footnote, design: .rounded).weight(item == 0 ? .bold : .medium))
                         .foregroundStyle(.white)
                 }
-            postContent(user: user, slug: slug)
+            CreateAPostView()
                 .tabItem(1) {
                     Image(systemName: item == 0 ? "square.and.pencil" : "square.and.pencil")
                         .font(.title3)
@@ -34,7 +34,7 @@ struct Tabbar: View {
                         .font(.system(.footnote, design: .rounded).weight(item == 0 ? .bold : .medium))
                         .foregroundStyle(.white)
                 }
-            PostList()
+            LoginView()
                 .tabItem(2) {
                     Image(systemName: item == 0 ? "person" : "person.fill")
                         .font(.title3)
