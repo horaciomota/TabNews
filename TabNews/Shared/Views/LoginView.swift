@@ -18,23 +18,34 @@ struct LoginView: View {
             VStack {
                 TextField("Email", text: $email)
                     .padding()
-                    .background(Color(.secondarySystemBackground))
-                    .cornerRadius(5.0)
+                    .background(.clear)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
                     .padding(.bottom, 20)
 
                 SecureField("Senha", text: $password)
                     .padding()
-                    .background(Color(.secondarySystemBackground))
-                    .cornerRadius(5.0)
+                    .background(.clear)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
                     .padding(.bottom, 20)
+
+                Text ("New user? Register here")
+                    .foregroundStyle(.primary)
+                    .padding()
 
                 Button("Entrar") {
                     loginUser()
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .frame(height: 50)
-                .foregroundColor(.white)
-                .background(Color.blue)
+                .foregroundStyle(.white)
+                .background(Color.primary)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
                 .cornerRadius(5.0)
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text("Login"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
