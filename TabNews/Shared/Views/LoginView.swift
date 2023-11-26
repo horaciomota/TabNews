@@ -14,48 +14,57 @@ struct LoginView: View {
     @State private var alertMessage = ""
 
     var body: some View {
-        NavigationView {
-            VStack {
-                TextField("Email", text: $email)
-                    .padding()
-                    .background(.clear)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
-                    .padding(.bottom, 20)
 
-                SecureField("Senha", text: $password)
-                    .padding()
-                    .background(.clear)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
-                    .padding(.bottom, 20)
+        VStack {
+            Spacer(minLength: 40)
+            Text("Bem-vindo de Volta!")
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+                .foregroundColor(.black)
+                .padding(.bottom, 20)
 
-                Text ("New user? Register here")
-                    .foregroundStyle(.primary)
-                    .padding()
+            TextField("Email", text: $email)
+                .padding()
+                .background(Color.gray.opacity(0.2))
+                .cornerRadius(12)
+                .foregroundColor(.black)
+                .padding(.horizontal, 20)
 
-                Button("Entrar") {
-                    loginUser()
-                }
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .frame(height: 50)
-                .foregroundStyle(.white)
-                .background(Color.primary)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                .cornerRadius(5.0)
-                .alert(isPresented: $showingAlert) {
-                    Alert(title: Text("Login"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-                }
+            SecureField("Senha", text: $password)
+                .padding()
+                .background(Color.gray.opacity(0.2))
+                .cornerRadius(12)
+                .foregroundColor(.black)
+                .padding(.horizontal, 20)
+                .padding(.top, 10)
 
-                Spacer()
+            Button(action: loginUser) {
+                Text("Entrar")
+                    .fontWeight(.semibold)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .frame(height: 50)
+                    .foregroundColor(.white)
+                    .background(Color.black)
+                    .cornerRadius(12)
             }
-            .padding()
-            .navigationTitle("Login")
+            .padding(.top, 20)
+            .padding(.horizontal, 20)
+
+            Button("Novo usuário? Registre-se aqui") {
+                // Ação para registro
+            }
+            .foregroundColor(.blue)
+            .padding(.top, 10)
+
+            Spacer()
         }
+        .padding()
+        .navigationTitle("Login")
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Login"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+        }
+
+
     }
 
     func loginUser() {
