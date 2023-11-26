@@ -10,6 +10,8 @@ import TabBarModule
 
 
 struct Tabbar: View {
+    var user: String
+    var slug: String
     @State private var item: Int = 0
 
     var body: some View {
@@ -23,21 +25,21 @@ struct Tabbar: View {
                         .font(.system(.footnote, design: .rounded).weight(item == 0 ? .bold : .medium))
                         .foregroundStyle(.white)
                 }
-            postContent(user: "maxsonalmeida", slug: "o-dev-junior-nao-pode-subestimar-o-poder-do-linkedin")
+            postContent(user: user, slug: slug)
                 .tabItem(1) {
-                    Image(systemName: item == 0 ? "square.and.pencil" : "house")
+                    Image(systemName: item == 0 ? "square.and.pencil" : "square.and.pencil")
                         .font(.title3)
                         .foregroundStyle(.white)
-                    Text("Home")
+                    Text("Post")
                         .font(.system(.footnote, design: .rounded).weight(item == 0 ? .bold : .medium))
                         .foregroundStyle(.white)
                 }
             PostList()
                 .tabItem(2) {
-                    Image(systemName: item == 0 ? "person" : "Profile")
+                    Image(systemName: item == 0 ? "person" : "person.fill")
                         .font(.title3)
                         .foregroundStyle(.white)
-                    Text("Home")
+                    Text("Profile")
                         .font(.system(.footnote, design: .rounded).weight(item == 0 ? .bold : .medium))
                         .foregroundStyle(.white)
                 }
@@ -50,5 +52,5 @@ struct Tabbar: View {
 }
 
 #Preview {
-    Tabbar()
+    Tabbar(user: "maxsonalmeida", slug: "o-dev-junior-nao-pode-subestimar-o-poder-do-linkedin")
 }

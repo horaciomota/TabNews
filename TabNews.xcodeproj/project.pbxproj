@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D7B2FE32B12969100DC22E3 /* TabViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7B2FE22B12969100DC22E3 /* TabViews.swift */; };
+		3D7B2FE32B12969100DC22E3 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7B2FE22B12969100DC22E3 /* Tabbar.swift */; };
 		3DFF05F22B0D667C00396A81 /* TabNewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF05F12B0D667C00396A81 /* TabNewsApp.swift */; };
 		3DFF05F42B0D667C00396A81 /* postContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF05F32B0D667C00396A81 /* postContent.swift */; };
 		3DFF05F62B0D667E00396A81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFF05F52B0D667E00396A81 /* Assets.xcassets */; };
@@ -47,7 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D7B2FE22B12969100DC22E3 /* TabViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViews.swift; sourceTree = "<group>"; };
+		3D7B2FE22B12969100DC22E3 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
 		3DFF05EE2B0D667C00396A81 /* TabNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFF05F12B0D667C00396A81 /* TabNewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNewsApp.swift; sourceTree = "<group>"; };
 		3DFF05F32B0D667C00396A81 /* postContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postContent.swift; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 				3DFF05F32B0D667C00396A81 /* postContent.swift */,
 				3DFF06352B100C3000396A81 /* FloatingButtonView.swift */,
 				3DFF06392B100F3400396A81 /* ComentsView.swift */,
-				3D7B2FE22B12969100DC22E3 /* TabViews.swift */,
+				3D7B2FE22B12969100DC22E3 /* Tabbar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,7 +344,7 @@
 				3DFF06272B0D692500396A81 /* PostList.swift in Sources */,
 				3DFF06212B0D68A300396A81 /* newsDataModel.swift in Sources */,
 				3DFF06362B100C3000396A81 /* FloatingButtonView.swift in Sources */,
-				3D7B2FE32B12969100DC22E3 /* TabViews.swift in Sources */,
+				3D7B2FE32B12969100DC22E3 /* Tabbar.swift in Sources */,
 				3DFF06252B0D68D900396A81 /* PostListViewModel.swift in Sources */,
 				3DFF05F22B0D667C00396A81 /* TabNewsApp.swift in Sources */,
 				3DFF06312B0EA88D00396A81 /* PostContentModel.swift in Sources */,

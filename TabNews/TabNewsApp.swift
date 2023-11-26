@@ -11,7 +11,7 @@ import SwiftUI
 struct TabNewsApp: App {
     var body: some Scene {
         WindowGroup {
-            PostList()
+            Tabbar(user: "maxsonalmeida", slug: "o-dev-junior-nao-pode-subestimar-o-poder-do-linkedin")
         }
     }
 }
